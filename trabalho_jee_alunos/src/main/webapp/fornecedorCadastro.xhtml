@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+   template="/WEB-INF/templates/default.xhtml">
+   <ui:define name="content">
+      <h:form id="formFornecedor">
+      	<h:messages id="messages" infoStyle="color: blue" errorStyle="color:red" style="width: 100%" />
+         <h2>FORNECEDOR</h2>
+         <table>
+            <tr>
+               <th style="text-align: right;">
+                  <h:outputLabel for="nome" value="Razão social	 do Fornecedor:"/>
+               </th>
+               <td>
+                  <h:inputText id="razaoSocial" value="#{fornecedorBean.fornecedor.razaoSocial}"/>
+                  <h:message for="razaoSocial" errorClass="invalid"/>
+               </td>
+            </tr>
+            <tr>
+               <th style="text-align: right;">
+                  <h:outputLabel for="cnpj" value="CNPJ do Fornecedor:"/>
+               </th>
+               <td>
+                  <h:inputText id="cnpj" value="#{fornecedorBean.fornecedor.cnpj}"/>
+                  <h:message for="cnpj" errorClass="invalid"/>
+               </td>
+            </tr>
+             <tr>
+               <th style="text-align: right;">
+                  <h:outputLabel for="endereco" value="Endereço do Fornecedor:"/>
+               </th>
+               <td>
+                  <h:inputText id="endereco" value="#{fornecedorBean.fornecedor.endereco}"/>
+                  <h:message for="endereco" errorClass="invalid"/>
+               </td>
+            </tr>
+             <tr>
+               <th style="text-align: right;">
+                  <h:outputLabel for="inscricaoMunicipal" value="Inscrição Municipal do Fornecedor:"/>
+               </th>
+               <td>
+                  <h:inputText id="inscricaoMunicipal" value="#{fornecedorBean.fornecedor.inscricaoMunicipal}"/>
+                  <h:message for="inscricaoMunicipal" errorClass="invalid"/>
+               </td>
+            </tr>
+            <tr>
+               <th style="text-align: right;">
+                  <h:outputLabel for="email" value="Email do Fornecedor:"/>
+               </th>
+               <td>
+                  <h:inputText id="email" value="#{fornecedorBean.fornecedor.email}"/>
+                  <h:message for="email" errorClass="invalid"/>
+               </td>
+            </tr>
+         </table>
+         <p>
+            <h:commandButton id="salvar" value="Salvar Fornecedor" action="#{fornecedorBean.salvarFornecedor}" />
+            <h:outputLabel value=" " />
+            <h:commandButton id="mostrar" value="Mostrar Fornecedor" immediate="true" action="#{fornecedorBean.redirecionarParaListagem}"/>
+         </p>
+      </h:form>
+   </ui:define>
+</ui:composition>
